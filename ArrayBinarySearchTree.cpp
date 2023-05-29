@@ -70,7 +70,6 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
         int index = 0;
         while (index < MAX_NUM_NODES && node[index] != nullptr)
         {
-            parentIndex = index;
             if (keyToDelete < node[index]->key)
             {
                 // Go to the left child
@@ -116,7 +115,7 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
         {
             // Smallest node in the right subtree
             int smallestNodeIndex = (2 * rightChildIndex) + 1;
-            while (smallestNodeIndex != nullptr)
+            while (node[smallestNodeIndex] != nullptr)
             {
                 smallestNodeIndex = (2 * smallestNodeIndex) + 1;
             }

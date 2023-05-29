@@ -2,7 +2,6 @@
 #define AbstractBST_h
 class AbstractBST
 {
-    AbstractBST() {}
     virtual bool isEmpty() = 0;
     virtual void addBST() = 0;
     virtual void removeBST(int keyToDelete) = 0;

@@ -2,7 +2,7 @@
 #define ARRAYBINARAYSEARCHTREE_HPP
 
 #define MAX_NUM_NODES 128
-#include "AbstractBST.h"
+#include "AbstractBST.hpp"
 
 class ArrayNode
 {
@@ -15,7 +15,7 @@ public:
 class ArrayBinarySearchTree : public AbstractBST
 {
 private:
-    ArrayNode node[MAX_NUM_NODES];
+    ArrayNode *node[MAX_NUM_NODES];
 
 public:
     ArrayBinarySearchTree();

@@ -1,15 +1,15 @@
 #ifndef ARRAYBINARAYSEARCHTREE_HPP
 #define ARRAYBINARAYSEARCHTREE_HPP
 
-#define MAX_NUM_NODES 128
 #include "AbstractBST.hpp"
+#define MAX_NUM_NODES 128
 
 class ArrayNode
 {
 public:
     int key;
-    int value;
-    ArrayNode(int key, int value) : key(key), value(value) {}
+    char value;
+    ArrayNode(int key, char value) : key(key), value(value) {}
 };
 
 class ArrayBinarySearchTree : public AbstractBST

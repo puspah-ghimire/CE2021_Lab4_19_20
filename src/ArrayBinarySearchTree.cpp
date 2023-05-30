@@ -1,6 +1,7 @@
 #include "ArrayBinarySearchTree.hpp"
 #include <iostream>
 using namespace std;
+
 ArrayBinarySearchTree::ArrayBinarySearchTree()
 {
     for (int i = 0; i < MAX_NUM_NODES; i++)
@@ -8,6 +9,7 @@ ArrayBinarySearchTree::ArrayBinarySearchTree()
         node[i] = nullptr;
     }
 }
+
 ArrayBinarySearchTree::~ArrayBinarySearchTree()
 {
     for (int i = 0; i < MAX_NUM_NODES; i++)
@@ -18,7 +20,7 @@ ArrayBinarySearchTree::~ArrayBinarySearchTree()
 
 bool ArrayBinarySearchTree::isEmpty()
 {
-    if (node[0] = nullptr)
+    if (node[0] == nullptr)
     {
         return true;
     }
@@ -27,6 +29,7 @@ bool ArrayBinarySearchTree::isEmpty()
         return false;
     }
 }
+
 void ArrayBinarySearchTree::addBST(int key, int value)
 {
     int index = 0;
@@ -59,6 +62,7 @@ void ArrayBinarySearchTree::addBST(int key, int value)
         cout << "The Array BST is full." << endl;
     }
 }
+
 void ArrayBinarySearchTree::removeBST(int keyToDelete)
 {
     if (isEmpty())
@@ -88,7 +92,7 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
 
         if (index >= MAX_NUM_NODES || node[index] == nullptr)
         {
-            cout << "Key is not found in the BST" << endl;
+            cout << "Key is not found in the BST." << endl;
         }
 
         int leftChildIndex = (2 * index) + 1;
@@ -99,6 +103,7 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
         {
             node[index] = nullptr;
         }
+
         // Case 2: Only one child
         else if (node[leftChildIndex] == nullptr)
         {
@@ -110,6 +115,7 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
             node[index] = node[leftChildIndex];
             node[leftChildIndex] = nullptr;
         }
+
         // Case 3: Has two subtrees
         else
         {
@@ -124,6 +130,7 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
         }
     }
 }
+
 bool ArrayBinarySearchTree::searchBST(int targetKey)
 {
     int index = 0;

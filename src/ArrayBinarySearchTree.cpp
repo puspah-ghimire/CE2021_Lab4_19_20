@@ -120,13 +120,14 @@ void ArrayBinarySearchTree::removeBST(int keyToDelete)
         else
         {
             // Smallest node in the right subtree
-            int smallestNodeIndex = (2 * rightChildIndex) + 1;
-            while (node[smallestNodeIndex] != nullptr)
+            int successorIndex = (2 * index) + 2;
+            while (node[(2 * successorIndex) + 1] != nullptr)
             {
-                smallestNodeIndex = (2 * smallestNodeIndex) + 1;
+                // Go to the left child
+                successorIndex = (2 * successorIndex) + 1;
             }
-            node[index]=node[smallestNodeIndex];
-            node[smallestNodeIndex]=nullptr;
+            node[index] = node[successorIndex];
+            node[successorIndex] = nullptr;
         }
     }
 }
